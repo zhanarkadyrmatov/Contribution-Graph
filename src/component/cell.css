@@ -1,0 +1,19 @@
+.cellEmpty {
+  background-color: #e1e4e8;
+}
+
+.cellLow {
+  background-color: #7bcc4f;
+}
+
+.cellMedium {
+  background-color: #30a14e;
+}
+
+.cellHigh {
+  background-color: #216e39;
+}
+
+.cellMax {
+  background-color: #0d652d;
+}
