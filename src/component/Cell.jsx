@@ -1,9 +1,11 @@
 import React from "react";
-import styles from "./cell.css";
 import { OverlayTrigger, Tooltip, Button } from "react-bootstrap";
+import { format } from "date-fns";
 
 function Cell({ index, data, datas }) {
   const value = data[index];
+
+  const dateFormatted = format(new Date(index), "EEEE MMMM d, yyyy");
 
   const getBackgroundColor = () => {
     if (value >= 1 && value <= 9) {
@@ -32,14 +34,34 @@ function Cell({ index, data, datas }) {
           <Tooltip id={`tooltip-top`}>
             <div
               style={{
-                padding: "20px",
+                padding: "5px 10px",
                 background: "#000",
                 borderRadius: "5px",
                 color: "#fff",
+                textAlign: "center",
               }}
             >
-              {`${datas}, contrubutions`} <br />
-              {index}
+              <span
+                style={{
+                  color: "#FFF",
+                  fontFamily: "Inter",
+                  fontSize: "12px",
+                  fontWeight: "400",
+                }}
+              >
+                {`${datas} contributions`}
+              </span>
+              <br />
+              <span
+                style={{
+                  color: "#7C7C7C",
+                  fontFamily: "Inter",
+                  fontSize: "10px",
+                  fontweight: "400",
+                }}
+              >
+                {dateFormatted}
+              </span>
             </div>
           </Tooltip>
         }
